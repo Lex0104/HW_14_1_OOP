@@ -11,9 +11,15 @@ def first_product():
 
 @pytest.fixture
 def for_category():
-    return Category(name="Мобильные телефоны", description="Iphone", products=["Iphone 14", "Iphone 15 Pro", "Iphone 16 Pro max"])
+    return Category(
+        name="Мобильные телефоны",
+        description="Iphone",
+        products=["Iphone 14", "Iphone 15 Pro", "Iphone 16 Pro max"],
+    )
 
 
 @pytest.fixture
-def empty_product():
-    return Category(name="Мобильные телефоны", description="Iphone")
+def for_category_empty_product():
+    return Category(
+        name="Мобильные телефоны", description="Iphone", products="Iphone 14"
+    )
