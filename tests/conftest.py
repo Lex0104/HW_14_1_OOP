@@ -10,8 +10,17 @@ def first_product():
 
 
 @pytest.fixture
+def second_product():
+    return Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет", 180000.0, 5)
+
+
+@pytest.fixture
 def for_category():
-    return Category(name="Мобильные телефоны", description="Iphone", products=["Iphone 14", "Iphone 15 Pro", "Iphone 16 Pro max"])
+    return Category(
+        name="Мобильные телефоны",
+        description="Iphone",
+        products=["Iphone 14", "Iphone 15 Pro", "Iphone 16 Pro max"],
+    )
 
 
 @pytest.fixture
