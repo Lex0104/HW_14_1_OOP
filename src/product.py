@@ -34,7 +34,7 @@ class Product:
         if price <= 0:
             print("Цена не должна быть нулевая или отрицательная")
             return
-        if price != self.__price:
+        if price < self.__price:
             check = input("Изменять цену? Введите y если да,и n если нет.\n")
             if check != "y":
                 return
@@ -44,4 +44,6 @@ class Product:
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
-        return self.__price * self.quantity + other.price * other.quantity
+        if type(other) is self.__class__:
+            return self.__price * self.quantity + other.price * other.quantity
+        raise TypeError
