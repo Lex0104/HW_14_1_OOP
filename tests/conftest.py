@@ -48,3 +48,8 @@ def first_smartphone():
 @pytest.fixture
 def second_smartphone():
     return Smartphone("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14, 90.3, "Note 11", 1024, "Синий")
+
+
+@pytest.fixture
+def category_empty_product():
+    return Category(name="Мобильные телефоны", description="Iphone")

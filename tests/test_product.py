@@ -1,3 +1,4 @@
+import pytest
 from src.product import Product
 
 
@@ -35,3 +36,13 @@ def test_str_product(first_product):
 
 def test_add_product(first_product, second_product):
     assert first_product + second_product == 1068000.0
+
+
+def test_add_not_product(first_product):
+    with pytest.raises(TypeError):
+        result = first_product + 1
+
+
+def test_empty_product():
+    with pytest.raises(ValueError):
+        Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
